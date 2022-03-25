@@ -1,0 +1,78 @@
+<ion-content class="login-content">
+  <div class="content">
+    <div class="login">
+      <div class="title">
+        <small> Hey! Welcome </small>
+        <div>Login</div>
+      </div>
+      <div class="login-form">
+        <form *ngIf="form" [formGroup]="form" (submit)="submitLoginForm()">
+          <div class="input-field">
+            <ion-item class="ion-no-padding">
+              <ion-label position="stacked">Email</ion-label>
+              <ion-input type="email" formControlName="email"></ion-input>
+            </ion-item>
+            <div class="error-container">
+              <form-field-error
+                [control]="form.controls.email"
+              ></form-field-error>
+            </div>
+          </div>
+          <br />
+          <br />
+          <div class="input-field">
+            <ion-item class="ion-no-padding">
+              <ion-label position="stacked">Password</ion-label>
+              <ion-input type="password" formControlName="password"></ion-input>
+            </ion-item>
+            <div class="error-container">
+              <form-field-error
+                [control]="form.controls.password"
+              ></form-field-error>
+            </div>
+          </div>
+          <div class="forgot-password ion-text-right">
+            <a class="link">Forgot Password?</a>
+          </div>
+          <br />
+          <ion-row>
+            <ion-col class="ion-text-center">
+              <ion-button color="primary" type="submit" [disabled]="!form.valid"
+                >LOGIN</ion-button
+              >
+            </ion-col>
+            <ion-col class="ion-text-center">
+              <ion-button color="medium" type="button" [routerLink]="'/auth/register'"
+                >SIGNUP</ion-button
+              >
+            </ion-col>
+          </ion-row>
+          <br />
+          <br />
+          <br />
+          <div class="ion-text-center">
+            <ion-text color="dark">
+              <p><strong>Or Login With</strong></p>
+            </ion-text>
+          </div>
+          <br />
+          <br />
+          <ion-row>
+            <ion-col class="ion-text-center">
+              <div class="social-login">
+                <ion-icon src="./assets/images/facebook.svg"></ion-icon>
+                <ion-label>Facebook</ion-label>
+              </div>
+            </ion-col>
+            <ion-col class="ion-text-center">
+              <div class="social-login">
+                <ion-icon src="./assets/images/google.svg"></ion-icon>
+                <ion-label>Google</ion-label>
+              </div>
+            </ion-col>
+          </ion-row>
+        </form>
+      </div>
+    </div>
+  </div>
+</ion-content>

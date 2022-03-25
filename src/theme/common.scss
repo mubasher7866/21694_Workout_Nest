@@ -1,0 +1,39 @@
+*:focus {
+  outline: none;
+}
+
+:root,
+body {
+  font-family: "montserrat", sans-serif;
+  --ion-font-family: "montserrat", sans-serif;
+}
+
+ion-content.page-content {
+  --padding-start: 16px;
+  --padding-end: 16px;
+  --padding-top: 40px;
+  --padding-bottom: 20px;
+  --background: #fff;
+}
+.link {
+  color: var(--ion-color-primary);
+  cursor: pointer;
+  font-weight: 500;
+}
+
+ion-refresher ion-refresher-content {
+  background: #131313 !important;
+  --color: #fff !important;
+}
+
+.searchbar-input-container.sc-ion-searchbar-ios {
+  background-color: #505050 !important;
+  color: white !important;
+  border-radius: 30px;
+  padding-left: 10px;
+  height: 45px;
+}
+.searchbar-left-aligned.sc-ion-searchbar-ios-h
+  .searchbar-search-icon.sc-ion-searchbar-ios {
+  padding-left: 8px;
+}

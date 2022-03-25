@@ -1,0 +1,103 @@
+<ion-content class="login-content">
+  <div class="content">
+    <div class="login">
+      <div class="title">
+        <small> Hey! Welcome </small>
+        <div>Register</div>
+      </div>
+      <div class="login-form">
+        <form *ngIf="form" [formGroup]="form" (submit)="submitRegisterForm()">
+          <div class="input-field">
+            <ion-item class="ion-no-padding">
+              <ion-label position="stacked">First name</ion-label>
+              <ion-input type="email" formControlName="fname"></ion-input>
+            </ion-item>
+            <div class="error-container">
+              <form-field-error
+                [control]="form.controls.fname"
+              ></form-field-error>
+            </div>
+          </div>
+          <br />
+          <div class="input-field">
+            <ion-item class="ion-no-padding">
+              <ion-label position="stacked">Last name</ion-label>
+              <ion-input type="email" formControlName="lname"></ion-input>
+            </ion-item>
+            <div class="error-container">
+              <form-field-error
+                [control]="form.controls.lname"
+              ></form-field-error>
+            </div>
+          </div>
+          <br />
+          <div class="input-field">
+            <ion-item class="ion-no-padding">
+              <ion-label position="stacked">Email</ion-label>
+              <ion-input type="email" formControlName="email"></ion-input>
+            </ion-item>
+            <div class="error-container">
+              <form-field-error
+                [control]="form.controls.email"
+              ></form-field-error>
+            </div>
+          </div>
+          <br />
+          <div class="input-field">
+            <ion-item class="ion-no-padding">
+              <ion-label position="stacked">Password</ion-label>
+              <ion-input type="password" formControlName="password"></ion-input>
+            </ion-item>
+            <div class="error-container">
+              <form-field-error
+                [control]="form.controls.password"
+              ></form-field-error>
+            </div>
+          </div>
+          <br />
+          <div class="input-field">
+            <ion-item class="ion-no-padding">
+              <ion-label position="stacked">Phone</ion-label>
+              <ion-input type="tel" formControlName="phone"></ion-input>
+            </ion-item>
+            <div class="error-container">
+              <form-field-error
+                [control]="form.controls.phone"
+              ></form-field-error>
+            </div>
+          </div>
+          <!-- <br />
+          <div class="input-field">
+            <ion-item class="ion-no-padding">
+              <ion-label position="stacked">User Type</ion-label>
+              <ion-select formControlName="userType">
+                <ion-select-option value="Learner">Learner</ion-select-option>
+                <ion-select-option value="Trainer">Trainer</ion-select-option>
+              </ion-select>
+            </ion-item>
+            <div class="error-container">
+              <form-field-error
+                [control]="form.controls.userType"
+              ></form-field-error>
+            </div>
+          </div> -->
+          <br />
+          <ion-row>
+            <ion-col class="ion-text-center">
+              <ion-button color="primary" type="submit">REGISTER</ion-button>
+            </ion-col>
+          </ion-row>
+          <br />
+          <br />
+          <br />
+          <div class="ion-text-center">
+            <ion-text color="dark">
+              <p><strong>Already have an account</strong></p>
+            </ion-text>
+            <a class="link" [routerLink]="'/auth/login'">LOGIN</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</ion-content>

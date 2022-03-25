@@ -1,0 +1,7 @@
+{
+  "name": "Workout Nest",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

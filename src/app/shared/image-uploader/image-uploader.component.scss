@@ -1,0 +1,40 @@
+.input-file-wrapper,
+.upload-placeholder,
+ion-avatar {
+  width: 95px;
+  height: 95px;
+  margin: auto;
+}
+
+.input-file-wrapper {
+  position: relative;
+
+  ion-avatar {
+    background-color: #8ee3804d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    text-align: center;
+    color: var(--whitelabel-person-item-text-color, var(--ion-color-primary));
+    span {
+      font-weight: bold;
+    }
+
+    ion-icon {
+      width: 32px;
+      height: 32px;
+    }
+  }
+
+  input[type="file"] {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    z-index: 999;
+  }
+}

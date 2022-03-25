@@ -1,0 +1,92 @@
+<ion-content class="page-content">
+  <div fxLayout="row" fxLayoutAlign="start center" class="searh">
+    <ion-segment
+      mode="ios"
+      [(ngModel)]="selectedSegment"
+      (ionChange)="changeSegment($event)"
+      class="rounded-segment"
+    >
+      <ion-segment-button value="Buddies">
+        <ion-label>Buddies</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="Gym">
+        <ion-label>Gym</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+    <!-- <ion-searchbar placeholder="Where do you want to train"></ion-searchbar> -->
+  </div>
+  <agm-map
+    [latitude]="lat"
+    [longitude]="lng"
+    [zoom]="zoom"
+    [disableDefaultUI]="false"
+    [zoomControl]="false"
+    (mapClick)="mapClicked($event)"
+  >
+    <agm-marker
+      *ngFor="let m of markers; let i = index"
+      (markerClick)="clickedMarker(m.name, i)"
+      [latitude]="m.lat"
+      [longitude]="m.lng"
+      [label]="m.name"
+      [markerDraggable]="m.draggable"
+      (dragEnd)="markerDragEnd(m, $event)"
+    >
+      <agm-info-window>
+        <ng-container *ngIf="m.type === 'gym'">
+          <div class="gym">
+            <div class="img">
+              <img [src]="iconUrl" />
+            </div>
+            <div class="gym-detail">
+              <div class="name">{{m.name}}</div>
+              <div class="type">Gym</div>
+            </div>
+          </div>
+        </ng-container>
+        <ng-container *ngIf="m.type === 'Buddy'">
+          <div class="buddy">
+            <div class="img">
+              <img [src]="m.icon ? m.icon : userImg" />
+            </div>
+            <div class="user-detail">
+              <div class="name">{{m.name}}</div>
+              <div class="type">Dublin, Ireland</div>
+              <ion-button
+                color="primary"
+                size="small"
+                routerLink="/tabs/messages/{{m.id}}"
+                >Match</ion-button
+              >
+            </div>
+          </div>
+        </ng-container>
+      </agm-info-window>
+    </agm-marker>
+    <agm-circle
+      [latitude]="lat"
+      [longitude]="lng"
+      [radius]="10000"
+      [fillColor]="'#1cc700'"
+      [circleDraggable]="true"
+      [editable]="true"
+    >
+    </agm-circle>
+  </agm-map>
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-row>
+      <ion-col
+        ><ion-text color="light">
+          <p>{{selectedSegment}} in your area</p>
+        </ion-text></ion-col
+      >
+      <ion-col class="ion-text-right"
+        ><ion-text color="light">
+          <p>{{markers && markers.length}} results</p>
+        </ion-text></ion-col
+      >
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>

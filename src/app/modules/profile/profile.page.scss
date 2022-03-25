@@ -1,0 +1,14 @@
+.title {
+  margin-bottom: 30px;
+  div {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--ion-color-primary);
+  }
+}
+ion-button {
+  --border-radius: 30px;
+  width: 40%;
+  margin: auto;
+  font-weight: 600;
+}

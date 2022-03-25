@@ -1,0 +1,33 @@
+.users-list {
+  ion-item {
+    --background: #fff;
+    --padding-start: 0px;
+    --inner-padding-start: 6px;
+    --inner-padding-end: 0px;
+    --padding-end: 0px;
+    --inner-padding-top: 12px;
+    --inner-padding-bottom: 12px;
+    .user {
+      display: flex;
+      align-items: center;
+      color: var(--ion-color-dark);
+      .user-avatar {
+        margin-right: 10px;
+        .avatar-bg {
+          width: 55px;
+          height: 55px;
+          border-radius: 100%;
+          border: 2px solid var(--ion-color-primary);
+        }
+      }
+      .user-detail {
+        .name {
+          font-weight: 600;
+        }
+        .desc {
+          font-size: 13px;
+        }
+      }
+    }
+  }
+}

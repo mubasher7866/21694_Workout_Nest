@@ -1,0 +1,15 @@
+<div class="input-file-wrapper">
+  <ion-avatar class="placeholder">
+    <img *ngIf="placeholder" [src]="placeholder" />
+    <span *ngIf="!placeholder && placeholderText">
+      {{ placeholderText | shortName }}
+    </span>
+    <ion-icon *ngIf="!placeholder && !placeholderText" name="camera"></ion-icon>
+  </ion-avatar>
+  <input
+    type="file"
+    accept="image/*"
+    id="upload-image"
+    (change)="crop($event)"
+  />
+</div>

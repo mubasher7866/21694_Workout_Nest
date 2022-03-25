@@ -1,0 +1,35 @@
+.error-message {
+  color: var(--ion-color-danger);
+  font-size: 11px;
+  width: 100%;
+  text-align: left;
+  margin-top: 6px;
+  > div {
+    width: 100%;
+  }
+}
+app-login .error-message {
+  margin-top: 3px;
+  margin-left: 5px;
+}
+.input-field {
+  ion-item {
+    --inner-border-width: 0px 0px 2.55px 0px;
+  }
+  ion-label {
+    font-size: 14px !important;
+    color: var(--ion-color-primary) !important;
+    font-weight: 800 !important;
+    text-transform: uppercase !important;
+  }
+  ion-input {
+    font-size: 14px !important;
+    color: #767676 !important;
+    font-weight: 600;
+  }
+  ion-select {
+    font-size: 14px !important;
+    color: #767676 !important;
+    font-weight: 600;
+  }
+}

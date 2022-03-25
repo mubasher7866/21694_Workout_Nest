@@ -1,0 +1,130 @@
+<ion-header class="header-bg">
+  <ion-toolbar class="transparent">
+    <ion-title>Profile</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="page-content">
+  <div class="login-form">
+    <div class="title">
+      <div>Update Profile</div>
+    </div>
+    <div class="profile-header ion-text-center" *ngIf="currentUser">
+      <image-uploader
+        [placeholderText]="currentUser?.fname"
+        [placeholder]="currentUser?.picture_thumbnail"
+        (base64)="updateImage($event)"
+      ></image-uploader>
+      <br />
+      <ion-button
+        *ngIf="currentUser?.picture_thumbnail"
+        size="small"
+        fill="outline"
+        color="dark"
+        (click)="updateImage('')"
+      >
+        Remove Picture
+      </ion-button>
+    </div>
+    <form *ngIf="form; else loading" [formGroup]="form" (submit)="submit()">
+      <div class="input-field">
+        <ion-item class="ion-no-padding">
+          <ion-label position="stacked">First name</ion-label>
+          <ion-input type="email" formControlName="fname"></ion-input>
+        </ion-item>
+        <div class="error-container">
+          <form-field-error [control]="form.controls.fname"></form-field-error>
+        </div>
+      </div>
+      <br />
+      <div class="input-field">
+        <ion-item class="ion-no-padding">
+          <ion-label position="stacked">Last name</ion-label>
+          <ion-input type="email" formControlName="lname"></ion-input>
+        </ion-item>
+        <div class="error-container">
+          <form-field-error [control]="form.controls.lname"></form-field-error>
+        </div>
+      </div>
+      <br />
+      <div class="input-field">
+        <ion-item class="ion-no-padding">
+          <ion-label position="stacked">Email</ion-label>
+          <ion-input type="email" readonly formControlName="email"></ion-input>
+        </ion-item>
+        <div class="error-container">
+          <form-field-error [control]="form.controls.email"></form-field-error>
+        </div>
+      </div>
+      <br />
+      <div class="input-field">
+        <ion-item class="ion-no-padding">
+          <ion-label position="stacked">Phone</ion-label>
+          <ion-input type="tel" formControlName="phone"></ion-input>
+        </ion-item>
+        <div class="error-container">
+          <form-field-error [control]="form.controls.phone"></form-field-error>
+        </div>
+      </div>
+      <!-- <br />
+      <div class="input-field">
+        <ion-item class="ion-no-padding">
+          <ion-label position="stacked">User Type</ion-label>
+          <ion-select formControlName="userType">
+            <ion-select-option value="Learner">Learner</ion-select-option>
+            <ion-select-option value="Trainer">Trainer</ion-select-option>
+          </ion-select>
+        </ion-item>
+        <div class="error-container">
+          <form-field-error
+            [control]="form.controls.userType"
+          ></form-field-error>
+        </div>
+      </div> -->
+      <br />
+      <ion-row>
+        <ion-col class="ion-text-right">
+          <ion-button
+            color="primary"
+            type="submit"
+            [disabled]="!form.valid || !form.dirty"
+            >Submit</ion-button
+          >
+        </ion-col>
+      </ion-row>
+    </form>
+  </div>
+</ion-content>
+
+<ng-template #loading>
+  <ion-skeleton-text
+    style="border-radius: 2px; height: 15px; width: 30%; margin-bottom: 5px"
+  ></ion-skeleton-text>
+  <ion-skeleton-text
+    style="border-radius: 2px; height: 40px; width: 98%; margin-bottom: 25px"
+  ></ion-skeleton-text>
+  <ion-skeleton-text
+    style="border-radius: 2px; height: 15px; width: 30%; margin-bottom: 5px"
+  ></ion-skeleton-text>
+  <ion-skeleton-text
+    style="border-radius: 2px; height: 40px; width: 98%; margin-bottom: 25px"
+  ></ion-skeleton-text>
+  <ion-skeleton-text
+    style="border-radius: 2px; height: 15px; width: 30%; margin-bottom: 5px"
+  ></ion-skeleton-text>
+  <ion-skeleton-text
+    style="border-radius: 2px; height: 40px; width: 98%; margin-bottom: 25px"
+  ></ion-skeleton-text>
+  <ion-skeleton-text
+    style="border-radius: 2px; height: 15px; width: 30%; margin-bottom: 5px"
+  ></ion-skeleton-text>
+  <ion-skeleton-text
+    style="border-radius: 2px; height: 40px; width: 98%; margin-bottom: 25px"
+  ></ion-skeleton-text>
+  <ion-skeleton-text
+    style="border-radius: 2px; height: 15px; width: 30%; margin-bottom: 5px"
+  ></ion-skeleton-text>
+  <ion-skeleton-text
+    style="border-radius: 2px; height: 40px; width: 98%; margin-bottom: 25px"
+  ></ion-skeleton-text>
+</ng-template>

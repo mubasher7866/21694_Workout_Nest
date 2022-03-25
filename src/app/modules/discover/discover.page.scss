@@ -1,0 +1,107 @@
+.page-content {
+  // --background: url(../../../assets/images/map.png) !important;
+}
+ion-searchbar {
+  margin-top: 10px;
+  padding-right: 0px !important;
+  padding-left: 0px !important;
+  searchbar-input-container {
+    background: #505050 !important;
+    border-radius: 30px;
+  }
+}
+ion-segment.rounded-segment {
+  --background: #505050;
+  justify-content: center !important;
+  border-radius: 30px !important;
+  border: 0px solid white;
+  --min-height: 40px;
+  width: 100%;
+  margin: auto;
+  .section-header {
+    font-weight: bold;
+  }
+  ion-segment-button {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    --color: #ffffff !important;
+    --color-checked: #ffffff !important;
+    --indicator-color: transparent;
+    --indicator-color-checked: transparent;
+    --border-color: transparent;
+    border-radius: 30px;
+    text-align: center;
+    --background: transparent !important;
+    --background-checked: var(--ion-color-primary) !important;
+    --border-width: 1px;
+    --border-style: solid;
+    --padding-start: 0px;
+    --padding-end: 0px;
+    max-width: 50vw;
+    width: 50vw;
+    text-transform: capitalize;
+    height: 40px;
+    min-height: 40px;
+    --indicator-box-shadow: none;
+    --margin-end: auto;
+    --margin-start: auto;
+    &:last-child {
+      margin-right: 0px;
+    }
+    &.segment-button-checked {
+      --border-style: none;
+    }
+  }
+}
+agm-map {
+  height: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: -9;
+}
+.searh {
+  z-index: 99999;
+}
+.gym {
+  display: flex;
+  align-items: center;
+  .img {
+    margin-right: 10px;
+    img {
+      border-radius: 100%;
+      width: 45px;
+      height: 45px;
+      object-fit: cover;
+    }
+  }
+  .gym-detail {
+    .name {
+      font-size: 17px;
+      color: black;
+      font-weight: 900;
+    }
+  }
+}
+.buddy {
+  display: flex;
+  align-items: center;
+  .img {
+    margin-right: 10px;
+    img {
+      border-radius: 100%;
+      width: 45px;
+      height: 45px;
+      object-fit: cover;
+    }
+  }
+  .user-detail {
+    .name {
+      font-size: 17px;
+      color: black;
+      font-weight: 900;
+    }
+  }
+}
